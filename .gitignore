@@ -1,0 +1,5 @@
+*.yaml
+*.xml
+.idea/
+temp*
+TODO
