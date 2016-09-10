@@ -3,11 +3,14 @@ package main
 import (
 	"fmt"
 	"os"
-	"strings"
 	"path/filepath"
+	"strings"
 
 	b "github.com/barsanuphe/endive/book"
+	e "github.com/barsanuphe/endive/endive"
 	h "github.com/barsanuphe/endive/helpers"
+	u "github.com/barsanuphe/endive/ui"
+
 	"github.com/skratchdot/open-golang/open"
 )
 
@@ -31,9 +34,12 @@ func main() {
 			validEpubs = append(validEpubs, absPath)
 		}
 	}
+
+	var ui e.UserInterface
+	ui = u.UI{}
 	// parse epubs and open the goodreads page
 	for _, epub := range validEpubs {
-		e := b.Epub{Filename:epub}
+		e := b.Epub{Filename: epub, UI: ui}
 		metadata, err := e.ReadMetadata()
 		if err != nil {
 			fmt.Println("Error reading metadata from " + epub + ": " + err.Error())
