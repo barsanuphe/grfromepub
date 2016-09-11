@@ -8,7 +8,6 @@ import (
 
 	b "github.com/barsanuphe/endive/book"
 	e "github.com/barsanuphe/endive/endive"
-	h "github.com/barsanuphe/endive/helpers"
 	u "github.com/barsanuphe/endive/ui"
 
 	"github.com/skratchdot/open-golang/open"
@@ -27,7 +26,7 @@ func main() {
 			fmt.Println(epubs[i] + " is not an epub, ignoring.")
 			continue
 		}
-		absPath, err := h.FileExists(epubs[i])
+		absPath, err := e.FileExists(epubs[i])
 		if err != nil {
 			fmt.Println(epubs[i] + ": " + err.Error())
 		} else {
