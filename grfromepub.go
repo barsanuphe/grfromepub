@@ -35,7 +35,7 @@ func main() {
 	}
 
 	var ui e.UserInterface
-	ui = u.UI{}
+	ui = &u.UI{}
 	// parse epubs and open the goodreads page
 	for _, epub := range validEpubs {
 		e := b.Epub{Filename: epub, UI: ui}
