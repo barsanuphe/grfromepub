@@ -1,7 +1,7 @@
 # grfromepub
 
-This is a very simple script that automatically opens the Goodreads page of book
-from an epub file, if a valid ISBN can be found.
+This is a very simple tool that automatically opens the GoodReads page of a book
+when given an epub file, if a valid ISBN is found in its metadata. 
 
 ## Installation
 
@@ -12,7 +12,7 @@ You need a [working Go installation](https://golang.org/doc/install).
 
 ## Usage
 
-The script only requires one or a list of existing epub files.
+The script only requires one or a list of existing epub files as arguments.
 
     $ grfromepub /home/user/epubs/firstepub.epub ../epubs/secondone.epub
 
@@ -21,9 +21,10 @@ browser to open the corresponding goodreads page.
 
 ## Finding ISBNs
 
-The script will do nothing if it cannot find an ISBN number. It will do its best
-to do so. However, since there is no standardized way of including an ISBN
-number in epub metadata, some publishers can be creative.
+The script will do nothing if it cannot find an ISBN, even though it will 
+do its best to do so. 
+However, since there is no standardized way of including an ISBN in epub 
+metadata, some publishers can be creative, or forget it include it altogether.
 
 If *grfromepub* cannot find an ISBN in one of your files:
 - open it with an editor like Sigil
