@@ -7,8 +7,8 @@ import (
 	"strings"
 
 	b "github.com/barsanuphe/endive/book"
-	e "github.com/barsanuphe/endive/endive"
-	u "github.com/barsanuphe/endive/ui"
+	u "github.com/barsanuphe/helpers/ui"
+	h "github.com/barsanuphe/helpers"
 
 	"github.com/skratchdot/open-golang/open"
 )
@@ -26,7 +26,7 @@ func main() {
 			fmt.Println(epubs[i] + " is not an epub, ignoring.")
 			continue
 		}
-		absPath, err := e.FileExists(epubs[i])
+		absPath, err := h.FileExists(epubs[i])
 		if err != nil {
 			fmt.Println(epubs[i] + ": " + err.Error())
 		} else {
@@ -34,7 +34,7 @@ func main() {
 		}
 	}
 
-	var ui e.UserInterface
+	var ui u.UserInterface
 	ui = &u.UI{}
 	// parse epubs and open the goodreads page
 	for _, epub := range validEpubs {
